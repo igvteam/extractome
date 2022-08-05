@@ -3,7 +3,7 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-setuptools.setup(name='igv-reports',
+setuptools.setup(name='extractome',
                  packages=['extractome'],
                  version='0.0.1',
                  description='',
@@ -11,7 +11,7 @@ setuptools.setup(name='igv-reports',
                  long_description_content_type="text/markdown",
                  license='MIT',
                  author='Jim Robinson',
-                 url='https://github.com/igvteam/igv-reports',
+                 url='https://github.com/igvteam/extractome',
                  keywords=['igv', 'bioinformatics', 'genomics', 'visualization', 'variant' ],
                  classifiers=[
                      'Programming Language :: Python :: 3',
