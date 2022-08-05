@@ -30,15 +30,15 @@ def extract_genome(args):
     Create fasta
     '''
     fasta_reader = FastaReader(args.fasta)
-    # output_file = os.path.join(args.output, f"{args.name}.fa")
-    # with open(output_file, "w") as o:
-    #     for chr in chrlist:
-    #         o.write(f">{chr}\n")
-    #         regions = region_dict[chr]
-    #         for r in regions:
-    #             seq = fasta_reader.slice({"chr": chr, "start": r.start + 1, "end": r.end})
-    #             o.write(seq)
-    #         o.write("\n")
+    output_file = os.path.join(args.output, f"{args.name}.fa")
+    with open(output_file, "w") as o:
+        for chr in chrlist:
+            o.write(f">{chr}\n")
+            regions = region_dict[chr]
+            for r in regions:
+                seq = fasta_reader.slice({"chr": chr, "start": r.start + 1, "end": r.end})
+                o.write(seq)
+            o.write("\n")
 
     ''' 
     Create .chain file
