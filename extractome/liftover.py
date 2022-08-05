@@ -1,5 +1,5 @@
 from intervaltree import IntervalTree
-from igv_compress.stream import getstream
+from extractome.stream import getstream
 
 
 def load_liftover(chains_file):

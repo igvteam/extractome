@@ -1,6 +1,6 @@
 import unittest
 
-from igv_compress import regions
+from extractome import regions
 
 
 class RegionsTest(unittest.TestCase):

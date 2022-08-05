@@ -1,7 +1,7 @@
 import unittest
 
-from igv_compress.liftover import Chain, load_liftover
-from igv_compress.feature import parse, Feature
+from extractome.liftover import Chain, load_liftover
+from extractome.feature import parse, Feature
 import pathlib
 
 

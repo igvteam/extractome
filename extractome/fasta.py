@@ -1,5 +1,5 @@
-from igv_compress import regions
-from igv_compress.chralias import build_aliastable
+from extractome import regions
+from extractome.chralias import build_aliastable
 import pysam
 
 def get_data(fasta_file,region=None):

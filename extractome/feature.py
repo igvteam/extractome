@@ -1,4 +1,4 @@
-from igv_compress.stream import getstream
+from extractome.stream import getstream
 
 class Feature:
 

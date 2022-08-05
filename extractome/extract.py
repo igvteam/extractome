@@ -1,15 +1,15 @@
 import os
 import argparse
 
-from igv_compress.fasta import FastaReader
-from igv_compress.genome import get_genome
-from igv_compress.feature import parse
-from igv_compress.liftover import load_liftover
+from extractome.fasta import FastaReader
+from extractome.genome import get_genome
+from extractome.feature import parse
+from extractome.liftover import load_liftover
 
 '''
 This is the main function for the application.
 '''
-def compress_genome(args):
+def extract_genome(args):
 
     # Create output directory
     if not os.path.exists(args.output):
@@ -115,7 +115,7 @@ def main():
     parser.add_argument("--name", help="xome name", default="Xome")
     parser.add_argument("--output", help="output directory name", default="output")
     args = parser.parse_args()
-    compress_genome(args)
+    extract_genome(args)
 
 
 if __name__ == "__main__":
