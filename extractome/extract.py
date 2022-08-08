@@ -102,8 +102,8 @@ def extract_genome(args):
     genome = {
         "id": args.id,
         "name": args.name,
-        "fastaURL": f"{fasta_file}",
-        "fastaIndex": f"{fasta_file}.fai",
+        "fastaURL": f"{args.name}.fa",
+        "fastaIndex": f"{args.name}.fa.fai",
         "tracks": [
             {
                 "name": "regions",
