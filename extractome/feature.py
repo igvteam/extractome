@@ -12,7 +12,7 @@ class Feature:
         self.color = color
 
     def clone(self):
-        return Feature(self.chr, self.start, self.end, self.name, self.score, self.strand, self.color)
+        return Feature(self.chr, self.start, self.end, self.name, self.score,  self.color)
 
     def size(self):
         return self.end - self.start
