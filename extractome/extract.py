@@ -112,7 +112,7 @@ def extract_genome(args):
 
     json_file = os.path.join(args.output, f"{args.name}.json")
     with open(json_file, "w") as f:
-        print(json.dumps(genome, indent=4), file=json_file)
+        print(json.dumps(genome, indent=4), file=f)
 
 
 
