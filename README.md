@@ -6,6 +6,10 @@ Creates an "extracted" genome assembly from a  fasta + list of regions
 
 ```python
 
+extractome regions.bed <options>
+
+or
+
 python extractome/extract.py regions.bed <options>
 
 ```
