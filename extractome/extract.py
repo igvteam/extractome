@@ -1,6 +1,7 @@
 import os
 import argparse
-
+import pysam
+import json
 from extractome.fasta import FastaReader
 from extractome.genome import get_genome
 from extractome.feature import parse
@@ -30,8 +31,8 @@ def extract_genome(args):
     Create fasta
     '''
     fasta_reader = FastaReader(args.fasta)
-    output_file = os.path.join(args.output, f"{args.name}.fa")
-    with open(output_file, "w") as o:
+    fasta_file = os.path.join(args.output, f"{args.name}.fa")
+    with open(fasta_file, "w") as o:
         for chr in chrlist:
             o.write(f">{chr}\n")
             regions = region_dict[chr]
@@ -39,6 +40,11 @@ def extract_genome(args):
                 seq = fasta_reader.slice({"chr": chr, "start": r.start + 1, "end": r.end})
                 o.write(seq)
             o.write("\n")
+
+    '''
+    Index fasta
+    '''
+    pysam.faidx(fasta_file)
 
     ''' 
     Create .chain file
@@ -79,8 +85,8 @@ def extract_genome(args):
     color2 = '100,100,200'
     color = color1
 
-    output_file = os.path.join(args.output, f"{args.name}.regions.bed")
-    with open(output_file, "w") as o:
+    regions_file = os.path.join(args.output, f"{args.name}.regions.bed")
+    with open(regions_file, "w") as o:
         for chr in chrlist:
             regions = region_dict[chr]
             for r in regions:
@@ -90,6 +96,23 @@ def extract_genome(args):
                     o.write(f.tostring() + "\n")
                     color = color1 if color is color2 else color2
 
+    '''
+    Create genome json file (optional)
+    '''
+    genome = {
+        "fastaURL": f"{fasta_file}",
+        "fastaIndex": f"{fasta_file}.fai",
+        "tracks": [
+            {
+                "name": "regions",
+                "url": f"{regions_file}"
+            }
+        ]
+    }
+
+    json_file = os.path.join(args.output, f"{args.name}.json")
+    with open(json_file, "w") as f:
+        print(json.dumps(genome, indent=4), file=json_file)
 
 
 
