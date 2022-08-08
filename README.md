@@ -27,6 +27,6 @@ Options
 The script creates 3 output files
 
 * base_name.fa
-* base_name.regions.bed  - the input regions file lifted over to extracted genome
-* base_name.chain  - a UCSC "chain" file. Can be used to liftover files to the new fasta with tools such as CrossMap
+* base_name.regions.bed  - the input regions file lifted over to extracted fasta
+* base_name.chain  - a UCSC "chain" file. Can be used to liftover files to the extracted fasta with tools such as [CrossMap](http://crossmap.sourceforge.net/)
 
