@@ -107,7 +107,7 @@ def extract_genome(args):
         "tracks": [
             {
                 "name": "regions",
-                "url": f"{regions_file}"
+                "url": f"{args.name}.regions.bed"
             }
         ]
     }

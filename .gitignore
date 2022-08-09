@@ -127,3 +127,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/extractome.iml
+/output/CPG_mm10.chain
+/output/CPG_mm10.fa
+/output/CPG_mm10.fa.fai
+/output/CPG_mm10.json
+/output/CPG_mm10.regions.bed
