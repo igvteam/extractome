@@ -100,7 +100,7 @@ def extract_genome(args):
     Create genome json file (optional)
     '''
     genome = {
-        "id": args.id,
+        "id": args.name,
         "name": args.name,
         "fastaURL": f"{args.name}.fa",
         "fastaIndex": f"{args.name}.fa.fai",
