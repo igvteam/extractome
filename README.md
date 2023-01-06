@@ -16,7 +16,7 @@ python extractome/extract.py regions.bed <options>
 
 **Required inputs**
 
-* Region file in "bed" format, described [here](https://genome.ucsc.edu/FAQ/FAQformat#format1).  Only the first 3 columns are required.
+* Region file in "bed" format, described [here](https://genome.ucsc.edu/FAQ/FAQformat#format1).  Only the first 3 columns are required.  Note that the bed format uses the “0-start, half-open” coordinate convention, so for example the first base in a sequence is represented by start=0, end=1.
 * Either a fasta file or IGV genome identifer (see Options below)
 
 **Options**
